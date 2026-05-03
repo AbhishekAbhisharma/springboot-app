@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo "Running Maven build"
-      - mvn clean package -DskipTests -X
+      - mvn clean package -DskipTests 
 
       - echo "Logging in to Amazon ECR"
       - aws --version
