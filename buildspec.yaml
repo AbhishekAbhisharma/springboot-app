@@ -12,7 +12,7 @@ phases:
       - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
 
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
-      - DOCKER_CONTAINER_NAME=Spring-boot   # 🔥 MUST MATCH ECS TASK CONTAINER NAME
+      - DOCKER_CONTAINER_NAME=spring-boot   # 🔥 MUST MATCH ECS TASK CONTAINER NAME
 
   build:
     commands:
