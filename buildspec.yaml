@@ -8,11 +8,11 @@ phases:
 
       - echo "Logging in to Amazon ECR"
       - aws --version
-      - REPOSITORY_URI=137068237830.dkr.ecr.ap-south-1.amazonaws.com/javatechie-registry
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
+      - REPOSITORY_URI=068799540153.dkr.ecr.eu-north-1.amazonaws.com/spring-boot
+      - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
 
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
-      - DOCKER_CONTAINER_NAME=javatechie-registry   # 🔥 MUST MATCH ECS TASK CONTAINER NAME
+      - DOCKER_CONTAINER_NAME=Spring-boot   # 🔥 MUST MATCH ECS TASK CONTAINER NAME
 
   build:
     commands:
